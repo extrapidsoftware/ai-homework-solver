@@ -1,0 +1,143 @@
+/* CSS Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container & Layout */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.content-wrapper.visible {
+    opacity: 1;
+}
+
+/* Header Styling */
+.welcome-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.welcome-header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.4;
+}
+
+.welcome-header h1 strong {
+    font-weight: 600;
+}
+
+/* Instructions Section */
+.instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.instruction-step {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.instruction-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #984afd;
+    margin-right: 20px;
+    line-height: 1;
+}
+
+.step-text {
+    font-size: 24px;
+    color: #333;
+    font-weight: 400;
+}
+
+.step-image {
+    text-align: center;
+    padding: 20px;
+}
+
+.step-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .welcome-header h1 {
+        font-size: 24px;
+    }
+
+    .step-number {
+        font-size: 36px;
+        margin-right: 15px;
+    }
+
+    .step-text {
+        font-size: 18px;
+    }
+
+    .instructions {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .welcome-header {
+        margin-bottom: 40px;
+    }
+
+    .welcome-header h1 {
+        font-size: 20px;
+    }
+
+    .step-number {
+        font-size: 28px;
+    }
+
+    .step-text {
+        font-size: 16px;
+    }
+}
